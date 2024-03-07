@@ -9,7 +9,7 @@
 ```mermaid
 flowchart TD
 A([INÍCIO]) --> B[/N1, N2/]
-B --> C[M=N1+N2/2]
+B --> C[M='N1+N2'/2]
 C --> D{M>=7}
 D --NÃO--> E{{O aluno está reprovado}}
 D --SIM--> F{{O aluno está aprovado}}
