@@ -116,5 +116,93 @@ SENAO
    ESCREVA "Poderá tirar a CNH daqui", y ano(s)
 ALGORITMO_FIM
 ```
+## Exercício 5
+## Fluxograma
+
+```mermaid
+flowchart TD
+
+A([INÍCIO]) --> B[/Números inteiros 'N1,N2,N3,N4'/]
+B --> C[M='N1+N2+N3+N4'/4]
+C --> D{{A média é 'M'}}
 ```
+### pseudocódigo
+```
+ALGORITMO calcMedia
+DECLARE N1,N2,N3,N4: inteiro
+        M: real positivo
+INICIO
+ESCREVA "Digite 4 números inteiros:",N1,N2,N3,N4
+LEIA N1,N2,N3,N4
+M←'N1+N2+N3+N4'/4
+ESCREVA "A média é:", M
+FIM
+```
+### teste
+```
+| N1 | N2 | N3 | N4 | M | Saída |
+| -- | -- | -- | -- | -- | -- |
+| 12 | 12 | 14 | 16 | 13.5 | “A média é: 13.5“ |
+| 2 | 6 | 8 | 4 | 5 | “A média é: 5“ |
+| 20 | 30 | 60 | 40 | 37.5 | “A média é: 37.5“ |
+```
+## Exercício 6
+## Fluxograma
+
+```mermaid
+flowchart TD
+
+A([INÍCIO]) --> B[/Temperatura em celsius 'C'/]
+B --> C[F = '9/5' * C + 32]
+C --> D{{A temperatura em Fahrenheit é 'F'}}
+```
+### pseudocódigo
+```
+ALGORITMO calcTemp
+DECLARE C,F: real       
+INICIO
+ESCREVA "Digite a temperatura em Celsius:", C
+LEIA C
+F ← '9/5' * C + 32
+ESCREVA "A temperatura em Fahrenheit é:", F
+FIM
+```
+### teste
+```
+| C | F | Saída |
+| -- | -- | -- | 
+| 30 | 86 | "A temperatura em Fahrenheit é: 86" | 
+| 22 | 71.6 | "A temperatura em Fahrenheit é: 71.6" |  
+| 12 | 53.6 | "A temperatura em Fahrenheit é: 53.6" | 
+```
+## Exercício 7
+## Fluxograma
+
+```mermaid
+flowchart TD
+
+A([INÍCIO]) --> B[/Chuva em polegadas 'p'/]
+B --> C[x=p*25.4]
+C --> D{{A quantidade de chuva em milímetros é 'x'}}
+```
+### pseudocódigo
+```
+ALGORITMO calcMilim
+DECLARE p,x: real positivo       
+INICIO
+ESCREVA "Digite a quantidade de chuva em polegadas:", p
+LEIA p
+x ← p*25.4
+ESCREVA "A quantidade de chuva em milímetros é:", "x"mm
+FIM
+```
+### teste
+```
+| p | x | Saída |
+| -- | -- | -- | 
+| 10 | 254 | "A quantidade de chuva em milímetros é: 254mm" | 
+| 4 | 101.6 | "A quantidade de chuva em milímetros é: 101.6mm" |  
+| 2 | 50.8 | "A quantidade de chuva em milímetros é: 50.8mm" | 
+```
+
 
