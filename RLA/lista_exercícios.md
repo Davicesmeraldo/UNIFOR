@@ -116,7 +116,8 @@ SENAO
    ESCREVA "Poderá tirar a CNH daqui", y ano(s)
 ALGORITMO_FIM
 ```
-## Exercício 5
+## Lista 2
+## Exercício 1
 ## Fluxograma
 
 ```mermaid
@@ -139,14 +140,14 @@ ESCREVA "A média é:", M
 FIM
 ```
 ### teste
-```
+
 | N1 | N2 | N3 | N4 | M | Saída |
 | -- | -- | -- | -- | -- | -- |
 | 12 | 12 | 14 | 16 | 13.5 | “A média é: 13.5“ |
 | 2 | 6 | 8 | 4 | 5 | “A média é: 5“ |
 | 20 | 30 | 60 | 40 | 37.5 | “A média é: 37.5“ |
-```
-## Exercício 6
+
+## Exercício 2
 ## Fluxograma
 
 ```mermaid
@@ -168,14 +169,14 @@ ESCREVA "A temperatura em Fahrenheit é:", F
 FIM
 ```
 ### teste
-```
+
 | C | F | Saída |
 | -- | -- | -- | 
 | 30 | 86 | "A temperatura em Fahrenheit é: 86" | 
 | 22 | 71.6 | "A temperatura em Fahrenheit é: 71.6" |  
 | 12 | 53.6 | "A temperatura em Fahrenheit é: 53.6" | 
-```
-## Exercício 7
+
+## Exercício 3
 ## Fluxograma
 
 ```mermaid
@@ -197,12 +198,226 @@ ESCREVA "A quantidade de chuva em milímetros é:", "x"mm
 FIM
 ```
 ### teste
-```
+
 | p | x | Saída |
 | -- | -- | -- | 
 | 10 | 254 | "A quantidade de chuva em milímetros é: 254mm" | 
 | 4 | 101.6 | "A quantidade de chuva em milímetros é: 101.6mm" |  
 | 2 | 50.8 | "A quantidade de chuva em milímetros é: 50.8mm" | 
+
+## Exercício 4
+## Fluxograma
+
+```mermaid
+flowchart TD
+
+A([INÍCIO]) --> B[/custo_fabrica/]
+B --> C[custo_cons ← custo_fabrica*1.57]
+C --> D{{Custo ao consumidor é 'custo_cons'}}
 ```
+### pseudocódigo
+```
+ALGORITMO calcCusto
+DECLARE custo_fabrica,custo_cons: numerico real positivo        
+INICIO
+ESCREVA "Insira o custo de fábrica:"
+LEIA custo_fabrica
+custo_cons ← custo_fabrica*1.57
+ESCREVA "Custo ao consumidor é:", custo_cons
+FIM
+```
+### teste
+
+| custo_fabrica | custo_cons | Saída |
+| -- | -- | -- | 
+| 36000 | 56520 | "Custo ao consumidor é: 56520" | 
+| 40000 | 62800 | "Custo ao consumidor é: 62800" |  
+| 50000 | 78500 | "Custo ao consumidor é: 78500" | 
+
+
+## Exercício 5
+## Fluxograma
+
+```mermaid
+flowchart TD
+
+A([INÍCIO]) --> B[/Número 'x'/]
+B --> C[y=x*x]
+C --> D{{x ao quadrado é 'y'}}
+```
+### pseudocódigo
+```
+ALGORITMO calcQuad
+DECLARE x: real         
+INICIO
+ESCREVA "Digite o número:", x
+LEIA x
+y ← x*x.
+ESCREVA "O número ao quadrado é:", y
+FIM
+```
+### teste
+
+| x | y | Saída |
+| -- | -- | -- | 
+| 6 | 36 | "O número ao quadrado é: 36" | 
+| 4 | 16 | "O número ao quadrado é: 16" |  
+| 5 | 25 | "O número ao quadrado é: 25" | 
+## Exercício 17
+### Fluxograma
+
+  
+
+```mermaid
+
+flowchart TD
+
+  
+
+A([Início]) --> B[/salário/] --> C[imposto = 0] --> D{salário <= 1499,15}
+
+  
+
+D --> |sim| Y
+
+  
+
+D --> |não| F{salário <= 2246,75}
+
+  
+
+F --> |sim| G["imposto = imposto + 7,5% * (salário - 1499,15)"]
+
+  
+
+G --> Y
+
+  
+
+F --> |não| H["imposto = imposto + 7,5% * (2246,75 - 1499,15)"]
+
+  
+
+H --> I{salário <= 2995,70}
+
+  
+
+I --> |sim| J["imposto = imposto + 15% * (salário - 2246,75)"]
+
+  
+
+J --> Y
+
+  
+
+I --> |não| K["imposto = imposto + 15% * (2995,70 - 2246,75)"]
+
+  
+
+K --> L{salário <= 3743,19}
+
+  
+
+L --> |sim| M["imposto = imposto + 22,5% * (salário - 2995,70)"]
+
+  
+
+M --> Y
+
+  
+
+L --> |não| N["imposto = imposto + 22,5% * (3743,19 - 2995,70)"]
+
+  
+
+N --> O["imposto = imposto + 27,5% * (salário - 3743,19)"]
+
+  
+
+O --> Y
+
+  
+
+Y[Escreva salário - imposto] --> Z([Fim])
+
+  
+
+```
+
+  
+
+### Pseudocódigo do fluxograma
+
+  
+
+```
+
+ALGORITMO calcImposto
+
+DECLARE salario, imposto: real
+
+INICIO
+
+ESCREVA "Digite o salário:"
+
+LEIA salario
+
+SE salario <= 1499,15
+
+imposto ← 0
+
+SENÃO SE salario <= 2246,75
+
+imposto ← imposto + 7,5% * (salário - 1499,15)
+
+SENÃO SE salario <= 2995,70
+
+imposto ← imposto + 7,5% * (2246,75 - 1499,15)
+
+imposto ← imposto + 15% * (salário - 2246,75)
+
+SENÃO SE salario <= 3743,19
+
+imposto ← imposto + 7,5% * (2246,75 - 1499,15)
+
+imposto ← imposto + 15% * (2995,70 - 2246,75)
+
+imposto ← imposto + 22,5% * (salário - 2995,70)
+
+SENÃO
+
+imposto ← imposto + 7,5% * (2246,75 - 1499,15)
+
+imposto ← imposto + 15% * (2995,70 - 2246,75)
+
+imposto ← imposto + 22,5% * (3743,19 - 2995,70)
+
+imposto ← imposto + 27,5% * (salário - 3743,19)
+
+FIM SE
+
+ESCREVA "Seu salário líquido é:", salario - imposto
+
+FIM
+
+
+
+  
+
+### teste
+
+  
+
+| **Salário** | **Salário líquido** | **Saída esperada** |
+
+| ----------- | ------------------- | ------------------------------ |
+
+| 1000 | 1000 | Seu salário líquido é: 1000 |
+
+| 2000 | 1962,44 | Seu salário líquido é: 1962,44 |
+
+| 3000 | 2830,95 | Seu salário líquido é: 2830,95 |
+
+| 4000 | 3592,78 | Seu salário líquido é: 3592,78 |
 
 
