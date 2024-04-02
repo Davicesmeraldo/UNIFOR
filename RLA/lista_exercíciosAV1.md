@@ -4,7 +4,7 @@
 **Disciplina:** Raciocínio Lógico e Algorítmico <br>
 **Código/Turma:** T160-39 <br>
 **Professor:** Ricardo Carubbi <br>
-**Data:** 21/03/2024 <br>
+**Data:** 03/04/2024 <br>
 **Aluno(a):** Davi de Cerqueira Esmeraldo <br>
 **Matrícula:** 2417684 <br>
 
