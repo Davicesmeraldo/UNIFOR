@@ -957,28 +957,28 @@ DECLARE a,b,axu: REAL
 
 INICIO
 
-    // Insira seu comentário
+    // Dado de entrada do usuário, um número real
     ESCREVA "Digite o valor da a:"
 
-    // Insira seu comentário
+    // Armazena o número dado pelo usuário na variável "a"
     LEIA a
 
-    // Insira seu comentário
+    // Dado de entrada do usuário
     ESCREVA "Digite o valor da b:"
 
-    // Insira seu comentário
+    // Armazena o número dado pelo usuário na variável "b"
     LEIA b
 
-    // Insira seu comentário
+    // Inicializa a variável "aux" em "a"
     aux <- a 
 
-    // Insira seu comentário
+    // Inicializa a variável "a" em "b"
     a <- b
 
-    // Insira seu comentário
+    // Inicializa a variável "a" em "b"
     b <- aux
 
-    // Insira seu comentário
+    // Mensagem de saída ao usuário 
     ESCREVA "a=", a
     ESCREVA "b=", b
 
@@ -993,25 +993,23 @@ FIM
 
 ## Questão 2
 Objetivo: Dado um conjunto n de notas de alunos em um exame, implemente e teste um algoritmo para fazer uma contagem do número de alunos que foram aprovados no exame. Será considerado aprovado o aluno que tirar nota 50 ou maior (no intervalo de 0 a 100).
-#### Fluxograma 
-Fluxograma conforme descrição do algoritmo acima, usando o loop ENQUANTO.
+#### Fluxograma 02
+Fluxograma opcional usando o loop PARA.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite o número de alunos: }}
+A([INICIO]) --> B{{Digite o número de notas: }}
 B --> C[\n\]
 C --> D[\cont = 0\]
-D --> E[\i = 1\]
-E --> F{i <= n}
-F --FALSE--> W{{Número de alunos aprovados: cont}}
-W --> Z([FIM])
-F --TRUE--> G{{Digite a nota do aluno, i}}
-G --> H[\nota\]
-H --> I{"nota >= 50 <br>E <br>nota <=100"}
-I --TRUE--> J[\cont =+ 1\]
-I --FALSE--> K[\i =+ 1\]
-J --> K
-K --LOOP--> F
+D --> E[[i=1 ATE n PASSO 1]]
+E --"i=1,2...,n"--> F{{Digite nota, i}}
+E --"i > n"--> K{{Número de alunos aprovados: , cont}}
+K --> L([FIM])
+F --> G[\nota\]
+G --> H{"nota >= 50 <br>E <br>nota <=100"}
+H --FALSE/LOOP--> E
+H --TRUE--> J[\cont =+ 1\]
+J --LOOP--> E
 ```
 
 #### Pseudocódigo 
@@ -1022,49 +1020,48 @@ DECLARE n, cont, nota, i: INTEIRO
 
 INICIO
 
-    // Insira seu comentário
+    // Entrada de dados pelo usuário
     ESCREVA "Digite a quantidade de notas dos alunos:"
 
-    // Insira seu comentário
+    // Armezena os dados na variável "n"
     LEIA n
 
-    // Insira seu comentário
+    // Armazena o valor da variável "cont"
     cont = 0 
 
-    // Insira seu comentário
+    // Loop contado (loop for) executa as instruções a cada iteração dos valores de 'i' de 1 até n.
     PARA i DE 1 ATE n FAÇA
 
-        // Insira seu comentário
+        // Dados de entrada do usuário, digitando a nota
         ESCREVA "Digite a nota do aluno", i, ":"
 
-        // Insira seu comentário
+        // Armazena o dado na variável "nota"
         LEIA nota
 
-        // Insira seu comentário
+        // Executa as instruções caso "nota >= 50 E nota <= 100" for verdadeiro
         SE nota >= 50 E nota <= 100 ENTAO
 
-            // Insira seu comentário
+            // Incrementa 1 na variável "cont" em cada interação
             cont = cont + 1 
 
         FIM_SE
 
     FIM_PARA
 
-    // Insira seu comentário
+    // Mensagem de saída para o usuário
     ESCREVA "O numero de alunos aprovados e:", cont
 
 FIM
 ```
 
-#### Tabela de testes 
-Tabela de testes referente ao algoritmo usando o loop ENQUANTO.
+#### Tabela de testes 02
+Tabela de testes referente ao algoritmo usando o loop PARA.
 
-| it | n  | i  | cont | i<=n  | nota, i | nota | nota_valida | cont+1 | i+1 | saída        | 
-| -- | -- | -- | --   | --    | --      | --   | --          | --     | --  | --           |
-| 1  | 3  | 1  |  0   | True  | nota 1  | 60   | True        | 1      | 2   |              |
-| 2  | 3  | 2  |  1   | True  | nota 2  | 40   | False       | 1      | 3   |              |
-| 3  | 3  | 3  |  1   | True  | nota 3  | 90   | True        | 2      | 4   |              |
-| 4  | 3  | 4  |  2   | False |         |      |             |        |     | Aprovados: 2 |
+| it | n  | cont | i  | nota, i | nota | nota_valida | cont+1 | saída        | 
+| -- | -- | --   | -- | --      | --   | --          | --     | --           |
+| 1  | 3  | 0    | 1  | nota 1  | 60   | True        | 1      |              |
+| 2  | 3  | 1    | 2  | nota 2  | 40   | False       | 1      |              |
+| 3  | 3  | 1    | 3  | nota 3  | 90   | True        | 2      | Aprovados: 2 |
 
 ## Questão 3
 Objetivo: Dado um conjunto de $n$ números, implemente e teste um algoritmo para calcular a soma desses números. <br>
@@ -1090,7 +1087,7 @@ J --> K[i =+ 1]
 K --LOOP--> G
 ```
 
-#### Pseudocódigo (1 ponto)
+#### Pseudocódigo 
 
 ```java
 Algoritmo SomaNumeros
@@ -1098,43 +1095,43 @@ DECLARE n,i,soma: INTEIRO
 
 INICIO
 
-    // Insira seu comentário
+    // Entrada de dados por parte do usuário e armazenamento desses dados na variável "n"
     ESCREVA "Digite a quantidade de números<br> (n >= 0):"
     LEIA n
 
-    // Insira seu comentário
+    // Executa as instruções para caso "n >=0" for verdadeiro
     SE n >=0 ENTAO
 
-        // Insira seu comentário
+        // Inicializa a variável "soma" em "0"
         soma <- 0
 
-        // Insira seu comentário
+        // Inicializa a variável "i" em "i"
         i <- i
 
-        // Insira seu comentário
+        // Loop condicional (loop while) que executa as instruções enquanto a condição "i <= n" for verdadeira
         ENQUANTO i <= n FAÇA
 
-            // Insira seu comentário
+            // Dados de entrada do usuário
             ESCREVA "Digite um número:"
 
-            // Insira seu comentário
+            // armazaena o dado na variável "num"
             LEIA num 
 
-            // Insira seu comentário
+            // Incrementa "num" na variável "soma" em cada interação
             soma <- soma + num
 
-            // Insira seu comentário
+            // Incrementa 1 na variável "i" em cada interação
             i <- i + 1
 
         FIM_ENQUANTO
 
-    // Insira seu comentário
+    // Executa as instruções para caso "n >=0" for falso
     SENAO
-        "O valor deve ser maior ou igual a zero!"
+    ESCREVA "O valor deve ser maior ou igual a zero!"
 
     FIM_SE
 
-    // Insira seu comentário
+    // Mensagem com os dados de saída do usuário
     ESCREVA "A soma dos numeros é , soma"
 
 FIM
@@ -1170,7 +1167,7 @@ H --> I[S += termo]
 I --LOOP--> E
 ```
 
-#### Pseudocódigo (1 ponto)
+#### Pseudocódigo 
 
 ```java
 Algoritmo SomaSerie
@@ -1178,39 +1175,39 @@ DECLARE n,numerador,denominador: INTEIRO; termo, S: REAL
 
 INICIO
 
-    // Insira seu comentário
+    // Entrada de dados pelo usuário
     ESCREVA "Digite o número de termos da série S:"
 
-    // Insira seu comentário
+    // Armazenamento dos dados na variável "n"
     LEIA n
 
-    // Insira seu comentário
+    // Inicialização da variável "S" em "0"
     S <- 0
 
-    // Insira seu comentário
+    // Loop contado (loop for) executa as instruções a cada iteração dos valores de "i" de "0" até "n-1"
     PARA i de 0 ATÉ n-1 PASSO 1 FAÇA
 
-        // Insira seu comentário
+        // Demonstra a variável "2 * i + 1" em "numerador"
         numerador = 2 * i + 1
 
-        // Insira seu comentário
+        // Demonstra a variável  2 * i + 2" em denominador"
         denominador <- 2 * i + 2
 
-        // Insira seu comentário
+        // Demonstra a variável "termo" em "numerador / denominador"
         termo = numerador / denominador
 
-        // Insira seu comentário
+        
         S += termo
 
     FIM_PARA
 
-    // Insira seu comentário
+    // Mensagem de saída para o usuário
     ESCREVA "Soma da série S é ", S
 
 FIM
 ```
 
-#### Tabela de testes (0.25 ponto)
+#### Tabela de testes 
 
 | it | n  | S  | i | numerador | denominador | termo | S += termo     | saída                  |
 | -- | -- | -- |-- | --        | --          | --    | --             | --                     |
@@ -1239,7 +1236,7 @@ G --LOOP--> F
 H --> I
 ```
 
-#### Pseudocódigo (2 pontos)
+#### Pseudocódigo 
 
 ```java
 ALGORITMO CalcFatorial
@@ -1247,30 +1244,30 @@ DECLARE n: INTEIRO
 
 INICIO
 
-    // Insira seu comentário
+    // Dado de entrada do usuário
     ESCREVA "Digite um numero inteiro nao-negativo:"
 
-    // Insira seu comentário
+    // Armazenamento dos dados na variável "n"
     LEIA n
 
-    // Insira seu comentário
+    // Executar as intruções caso "n >= 0" seja verdadeiro
     SE n >= 0 ENTAO
 
-        // Insira seu comentário
+        // Inicializa a variável "fator" em 1
         fator <- 1
 
-        // Insira seu comentário
+        // Loop contado (loop for) executa as instruções a cada iteração dos valores de "i" de "1" até "n"
         PARA i DE 1 ATÉ n PASSO 1 FAÇA
 
-            // Insira seu comentário
+            // Incrementa "* i" na variável "fator" 
             fator <- fator * i        // fator *= i
 
         FIM_PARA
 
-        // Insira seu comentário
+        // Mensagem de saída ao usuário
         ESCREVA "O fatorial de, n, é:", fator
 
-    // Insira seu comentário
+    // Executar as intruções caso "n >= 0" seja falso
     SENAO
         ESCREVA "O valor deve ser maior ou igual a zero!"
     FIM_SE
@@ -1314,31 +1311,31 @@ DECLARE n, a, b, termo_atual: INTEIRO
 
 INICIO
 
-    // Insira seu comentário
+    // Entradas de dados pelo usuário
     ESCREVA "Número de termos da série Fibonacci:"
 
-    // Insira seu comentário
+    // Armazenamento dos dados na variável "n"
     LEIA n
 
-    // Insira seu comentário
+    // Inicialização da variável "a" em "0"
     a <- 0
 
-    // Insira seu comentário
+    // Inicialização da variável "b" em "1"
     b <- 1
 
-    // Insira seu comentário
+    // Loop contado (loop for) executa as instruções a cada iteração dos valores de "i" de "1" até "n"
     PARA i DE 1 ATE n FAÇA
 
-        // Insira seu comentário
+        // Dados de saída para o usuário
         ESCREVA a
 
-        // Insira seu comentário
+        // inicialize a variável "termo_atual" em "a + b"
         termo_atual <- a + b
 
-        // Insira seu comentário
+        // Inicialize a variável "a" em "b"
         a <- b
 
-        // Insira seu comentário
+        // Inicialize a variável "b" em "termo atual"
         b <- termo_atual
 
     FIM_PARA
@@ -1384,35 +1381,35 @@ DECLARE num, num_inv, digito: INTEIRO
 
 INICIO
 
-    // Insira seu comentário
+    // Entradas de dados pelo usuário e armazenanmento dos dados na variável "num"
     ESCREVA "Digite o número a ser invertido:"
     LEIA num
 
-    // Insira seu comentário
+    // Instruções caso "num < 0" seja verdadeiro
     SE num < 0 ENTAO
 
-        // Insira seu comentário
+        // Dados de saída, mensagem ao usuário
         ESCREVA "O número deve ser positivo!"
 
-    // Insira seu comentário
+    // Instruções caso "num < 0" seja falso
     SENAO
 
-        // Insira seu comentário
+        // Inicialize a variável "num_inv" em 0
         num_inv <- 0
 
-        // Insira seu comentário
+        // Loop condicional (loop while) que executa as instruções enquanto a condição "num > 0" for verdadeira
         ENQUANTO num > 0 FAÇA
 
-            // Insira seu comentário
+            //  A variável "digito" em "resto da divisão de num por 10"
             digito <- num % 10
 
-            // Insira seu comentário
+            // Variável "num_inv" em "resto da divisão de num por 10" mais "digito"
             num_inv <- (num_inv * 10) + digito
 
-            // Insira seu comentário
+            // num sendo num dividido por 10
             num <- num // 10
 
-        // Insira seu comentário
+        // Mensagem de saída para o usuário
         ESCREVA "Número invertido:", num_inv
 
     FIM_SE
