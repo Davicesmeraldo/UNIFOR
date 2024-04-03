@@ -426,7 +426,7 @@ U --> R
 V --> R
 ```
 
-#### Pseudocódigo (1.0 ponto)
+#### Pseudocódigo
 
 ```java
 ALGORITMO CalculadoraSimples
@@ -949,7 +949,7 @@ H --> I{{"a =", a}}
 I --> J{{"b =", b}}
 ```
 
-#### Pseudocódigo (1 ponto)
+#### Pseudocódigo 
 
 ```java
 ALGORTIMO TrocaValores
@@ -1303,7 +1303,7 @@ I --> J[b = termo_atual]
 J --LOOP--> F 
 ```
 
-#### Pseudocódigo (2 pontos)
+#### Pseudocódigo 
 
 ```java
 ALGORITMO GeraFibonacci
@@ -1373,7 +1373,7 @@ D --FALSE--> E{{O número deve ser positivo!}}
 E --> W
 ```
 
-#### Pseudocódigo (2 pontos)
+#### Pseudocódigo 
 
 ```java
 Algoritmo InverteInteiro
