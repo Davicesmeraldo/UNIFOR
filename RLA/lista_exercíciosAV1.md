@@ -934,12 +934,13 @@ FIM
 # Avaliação Diagnóstica
 ## Questão 1
 Objetivo: Dadas duas variáveis, a e b, implemente e teste um algoritmo para trocar os valores atribuídos a elas.
-### Fluxograma 1
+#### Fluxograma
+
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite o valor da a: }}
+A([INICIO]) --> B{{"Digite o valor da a:"}}
 B --> C[\a\]
-C --> D{{Digite o valor da b: }}
+C --> D{{"Digite o valor da b:"}}
 D --> E[\b\]
 E --> F[aux = a]
 F --> G[a = b]
@@ -947,28 +948,54 @@ G --> H[b = aux]
 H --> I{{"a =", a}}
 I --> J{{"b =", b}}
 ```
-### Pseudocódigo 1
+
+#### Pseudocódigo (1 ponto)
+
+```java
+ALGORTIMO TrocaValores
+DECLARE a,b,axu: REAL
+
+INICIO
+
+    // Insira seu comentário
+    ESCREVA "Digite o valor da a:"
+
+    // Insira seu comentário
+    LEIA a
+
+    // Insira seu comentário
+    ESCREVA "Digite o valor da b:"
+
+    // Insira seu comentário
+    LEIA b
+
+    // Insira seu comentário
+    aux <- a 
+
+    // Insira seu comentário
+    a <- b
+
+    // Insira seu comentário
+    b <- aux
+
+    // Insira seu comentário
+    ESCREVA "a=", a
+    ESCREVA "b=", b
+
+FIM
 ```
-1 ALGORITMO valores
-2 INICIO
-3 ESCREVA "Digite o valor de a: "
-4 LEIA a
-5 ESCREVA "Digite o valor da b: "
-6 LEIA b
-7 a = aux
-8 a = b
-9 b = aux
-10 ESCREVA "a =", a
-11 ESCREVA "b =", b
-```
-#### Teste de mesa 1
+
+#### Tabela de testes
+
 | a  | b  | aux | a  | b  | saída 1 | saída 2 | 
 | -- | -- | --  | -- | -- | --      | --      | 
 | 0  | 1  | 0   | 1  | 0  | a = 1   | b = 0   |
 
 ## Questão 2
 Objetivo: Dado um conjunto n de notas de alunos em um exame, implemente e teste um algoritmo para fazer uma contagem do número de alunos que foram aprovados no exame. Será considerado aprovado o aluno que tirar nota 50 ou maior (no intervalo de 0 a 100).
-### Fluxograma 2
+#### Fluxograma 
+Fluxograma conforme descrição do algoritmo acima, usando o loop ENQUANTO.
+
 ```mermaid
 flowchart TD
 A([INICIO]) --> B{{Digite o número de alunos: }}
@@ -986,28 +1013,52 @@ I --FALSE--> K[\i =+ 1\]
 J --> K
 K --LOOP--> F
 ```
-### Pseudocódigo 2
+
+#### Pseudocódigo 
+
+```java
+ALGORTIMO ContaAprovacoes
+DECLARE n, cont, nota, i: INTEIRO
+
+INICIO
+
+    // Insira seu comentário
+    ESCREVA "Digite a quantidade de notas dos alunos:"
+
+    // Insira seu comentário
+    LEIA n
+
+    // Insira seu comentário
+    cont = 0 
+
+    // Insira seu comentário
+    PARA i DE 1 ATE n FAÇA
+
+        // Insira seu comentário
+        ESCREVA "Digite a nota do aluno", i, ":"
+
+        // Insira seu comentário
+        LEIA nota
+
+        // Insira seu comentário
+        SE nota >= 50 E nota <= 100 ENTAO
+
+            // Insira seu comentário
+            cont = cont + 1 
+
+        FIM_SE
+
+    FIM_PARA
+
+    // Insira seu comentário
+    ESCREVA "O numero de alunos aprovados e:", cont
+
+FIM
 ```
-1 ALGORITMO notas
-2 DECLARE n, i, cont: int
-3 INICIO
-4 ESCREVA "Digite o número de alunos: "
-5 LEIA n
-6 cont = 0
-7 i = 1
-8 SE i <= n
-9   ENTÃO ESCREVA "Digite a nota do aluno, i"
-10   LEIA nota
-11   SE nota >= 50 E nota <=100
-12      cont =+ 1
-13      i =+ 1
-14    SENÃO i =+ 1
-15    FIM_SE
-16 SENÃO ESCREVA "Número de alunos aprovados: cont"
-17 FIM_SE  
-18 FIM_ALGORITMO
-```
-### Teste de mesa 2
+
+#### Tabela de testes 
+Tabela de testes referente ao algoritmo usando o loop ENQUANTO.
+
 | it | n  | i  | cont | i<=n  | nota, i | nota | nota_valida | cont+1 | i+1 | saída        | 
 | -- | -- | -- | --   | --    | --      | --   | --          | --     | --  | --           |
 | 1  | 3  | 1  |  0   | True  | nota 1  | 60   | True        | 1      | 2   |              |
@@ -1016,8 +1067,10 @@ K --LOOP--> F
 | 4  | 3  | 4  |  2   | False |         |      |             |        |     | Aprovados: 2 |
 
 ## Questão 3
-Objetivo:
-### Fluxograma 3
+Objetivo: Dado um conjunto de $n$ números, implemente e teste um algoritmo para calcular a soma desses números. <br>
+Aceite apenas $n$ maior ou igual a zero.
+#### Fluxograma
+
 ```mermaid
 flowchart TD
 A([INICIO]) --> B{{"Digite a quantidade de números<br> (n >= 0):"}}
@@ -1036,28 +1089,59 @@ I --> J[soma =+ num]
 J --> K[i =+ 1]
 K --LOOP--> G
 ```
-### Pseudocódigo 3
+
+#### Pseudocódigo (1 ponto)
+
+```java
+Algoritmo SomaNumeros
+DECLARE n,i,soma: INTEIRO
+
+INICIO
+
+    // Insira seu comentário
+    ESCREVA "Digite a quantidade de números<br> (n >= 0):"
+    LEIA n
+
+    // Insira seu comentário
+    SE n >=0 ENTAO
+
+        // Insira seu comentário
+        soma <- 0
+
+        // Insira seu comentário
+        i <- i
+
+        // Insira seu comentário
+        ENQUANTO i <= n FAÇA
+
+            // Insira seu comentário
+            ESCREVA "Digite um número:"
+
+            // Insira seu comentário
+            LEIA num 
+
+            // Insira seu comentário
+            soma <- soma + num
+
+            // Insira seu comentário
+            i <- i + 1
+
+        FIM_ENQUANTO
+
+    // Insira seu comentário
+    SENAO
+        "O valor deve ser maior ou igual a zero!"
+
+    FIM_SE
+
+    // Insira seu comentário
+    ESCREVA "A soma dos numeros é , soma"
+
+FIM
 ```
-1 ALGORITMO contagem
-2 DECLARE n
-3 INICIO
-4 ESCREVA "Digite a quantidade de números<br> (n >= 0):"
-5 LEIA n
-6 SE n >= 0
-7   ENTAO soma = 0
-8   i = 1
-9   SE i <= n
-10     ENTAO ESCREVA "Digite um número: "
-11     LEIA num
-12     soma =+ num
-13     i =+ 1
-14  SENÃO ESCREVA "A soma dos numeros é , soma"
-15  FIM_SE 
-16 SENÃO ESCREVA "O valor deve ser maior ou igual a zero!"
-17 FIM_SE
-18 FIM_ALGORITMO
-```
-### Teste de mesa 3
+
+#### Tabela de testes
+
 | it | n  | n >= 0 | soma | i  | i <= n | num | soma =+ num  | saída                   |
 | -- | -- | --     | --   | -- | --     | --  | --           | --                      |
 |    | -3 | False  |      |    |        |     |              | O valor deve ser ...    |
@@ -1068,43 +1152,66 @@ K --LOOP--> G
 | 4  | 3  | True   | 35   | 4  | False  |     |              | A soma dos números é 35 |
 
 ## Questão 4
-Objetivo:
-### Fluxograma 4
+Objetivo: Dado um conjunto de $n$ termos da série, implemente e teste um algoritmo para calcular o valor de S, conforme definido abaixo:
+#### Fluxograma
+
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite o número de termos da série S: }}
+A([INICIO]) --> B{{"Digite o número de termos da série S:"}}
 B --> C[/n/]
 C --> D[S = 0]
-D --> E[[i=0 ATE n PASSO 1]]
-E --i > n--> J{{"Soma da série S é ", S}}
+D --> E[[i=0 ATE n-1 PASSO 1]]
+E --"i > n-1"--> J{{"Soma da série S é ", S}}
 J --> K([FIM])
-E --"i=0,1,2,..,n"--> F[numerador = 2 * i + 1]
+E --"i=0,1,2,..,n-1"--> F[numerador = 2 * i + 1]
 F --> G[denominador = 2 * i + 2]
 G --> H[termo = numerador / denominador]
 H --> I[S += termo]
 I --LOOP--> E
 ```
-### Pseudocódigo 4
+
+#### Pseudocódigo (1 ponto)
+
+```java
+Algoritmo SomaSerie
+DECLARE n,numerador,denominador: INTEIRO; termo, S: REAL
+
+INICIO
+
+    // Insira seu comentário
+    ESCREVA "Digite o número de termos da série S:"
+
+    // Insira seu comentário
+    LEIA n
+
+    // Insira seu comentário
+    S <- 0
+
+    // Insira seu comentário
+    PARA i de 0 ATÉ n-1 PASSO 1 FAÇA
+
+        // Insira seu comentário
+        numerador = 2 * i + 1
+
+        // Insira seu comentário
+        denominador <- 2 * i + 2
+
+        // Insira seu comentário
+        termo = numerador / denominador
+
+        // Insira seu comentário
+        S += termo
+
+    FIM_PARA
+
+    // Insira seu comentário
+    ESCREVA "Soma da série S é ", S
+
+FIM
 ```
-1 ALGORITMO somaserie
-2 DECLARE n, s, i: real
-3 INICIO
-4 ESCREVA "Digite o número de termos da série S: "
-5 LEIA n
-6 S = 0
-7 PARA <i> DE <0> ATE <n> [PASSO1] FAÇA
-8   numerador = 2 * i + 1
-9   LEIA numerador
-10  denominador = 2 * i + 2
-11  LEIA denominador
-12  termo = numerador / denominador
-13  LEIA termo
-14  S += termo
-15  FIM_PARA
-16 ESCREVA "Soma da série S é ," S
-17 FIM_ALGORITMO
-```
-### Teste de mesa 4
+
+#### Tabela de testes (0.25 ponto)
+
 | it | n  | S  | i | numerador | denominador | termo | S += termo     | saída                  |
 | -- | -- | -- |-- | --        | --          | --    | --             | --                     |
 |    | 0  | 0  |   |           |             |       |                |                        |
@@ -1114,15 +1221,16 @@ I --LOOP--> E
 | 4  | 4  | 0  | 3 | 2*3+1 = 1 | 2*3+2 = 2   | 7/8   | 0+1/2 = 2.96   | Soma da série S é 2.96 |
 
 ## Questão 5
-Objetivo:
-### Fluxograma 5
+Objetivo: Dado um número $n$, implemente e teste um algoritmo para calcular o fatorial de $n$ (escrito como $n!$), onde $n ≥ 0$.
+#### Fluxograma
+
 ```mermaid
 flowchart TD
 A([INICIO]) --> B{{"Digite um numero inteiro nao-negativo:"}}
 B --> C[/n/]
 C --> D{n >= 0}
 D --TRUE--> E[fator = 1]
-D --FALSE--> J{{O valor deve ser maior ou igual a zero!}}
+D --FALSE--> J{{"O valor deve ser maior ou igual a zero!"}}
 J --> I([FIM])
 E --> F[[i=1 ATÉ n PASSO 1]]
 F --"i > n"--> H{{O fatorial de, n, é:, fator}}
@@ -1130,25 +1238,48 @@ F --"i=1,2,..n"--> G[fator = fator * i]
 G --LOOP--> F
 H --> I
 ```
-### Pseudocódigo 5
+
+#### Pseudocódigo (2 pontos)
+
+```java
+ALGORITMO CalcFatorial
+DECLARE n: INTEIRO
+
+INICIO
+
+    // Insira seu comentário
+    ESCREVA "Digite um numero inteiro nao-negativo:"
+
+    // Insira seu comentário
+    LEIA n
+
+    // Insira seu comentário
+    SE n >= 0 ENTAO
+
+        // Insira seu comentário
+        fator <- 1
+
+        // Insira seu comentário
+        PARA i DE 1 ATÉ n PASSO 1 FAÇA
+
+            // Insira seu comentário
+            fator <- fator * i        // fator *= i
+
+        FIM_PARA
+
+        // Insira seu comentário
+        ESCREVA "O fatorial de, n, é:", fator
+
+    // Insira seu comentário
+    SENAO
+        ESCREVA "O valor deve ser maior ou igual a zero!"
+    FIM_SE
+
+FIM
 ```
-1 ALGORITMO fatorial
-2 DECLARE n, i, fator: int
-3 INICIO
-4 ESCREVA "Digite um numero inteiro nao-negativo:"
-5 LEIA n
-6 SE n >= 0
-7   ENTAO fator = 1
-8   PARA <i> DE <1> ATE n PASSO <1> FAÇA
-9   LEIA i
-10  fator = fator * i
-11  LEIA fator
-12  FIM_PARA
-13 SENÃO ESCREVA "O valor deve ser maior ou igual a zero!"
-14 FIM_SE
-15 FIM_ALGORITMO
-```
-### Teste de mesa 5
+
+#### Tabela de testes
+
 | n  | fator | i  | fator = fator * i | saída               |
 | -- | --    | -- | --                | --                  |
 | 3  | 1     | 1  | 1*1 = 1           |                     |
@@ -1156,39 +1287,66 @@ H --> I
 | 3  | 2     | 3  | 2*3 = 6           | O fatorial de 3 é 6 |
 
 ## Questão 6
-Objetivo:
-### Fluxograma 6
+Objetivo: Gerar e imprimir os $n$ primeiros termos da sequência de Fibonacci, onde $n ≥ 1$. <br>
+Os primeiros termos são: $0, 1, 1, 2, 3, 5, 8, 13, \dots$. Cada termo, além dos dois primeiros, é derivado da soma dos seus dois antecessores mais próximos.
+#### Fluxograma
+
 ```mermaid
 flowchart TD
 A([INICIO]) --> B{{"Número de termos da série Fibonacci:"}}
-B --> C[a = 0]
-C --> D[b = 1]
-D --> E[[i=1 ATÉ n PASSO 1]]
-E --"i > n"--> J([FIM])
-E --"i=1,2,...,n"--> F{{a}}
-F --> G[termo_atual = a + b]
-G --> H[a = b]
-H --> I[b = termo_atual]
-I --LOOP--> E 
+B --> C[/n/]
+C --> D[a = 0]
+D --> E[b = 1]
+E --> F[[i=1 ATÉ n PASSO 1]]
+F --"i > n"--> K([FIM])
+F --"i=1,2,...,n"--> G{{a}}
+G --> H[termo_atual = a + b]
+H --> I[a = b]
+I --> J[b = termo_atual]
+J --LOOP--> F 
 ```
-### Pseudocódigo 6
+
+#### Pseudocódigo (2 pontos)
+
+```java
+ALGORITMO GeraFibonacci
+DECLARE n, a, b, termo_atual: INTEIRO
+
+INICIO
+
+    // Insira seu comentário
+    ESCREVA "Número de termos da série Fibonacci:"
+
+    // Insira seu comentário
+    LEIA n
+
+    // Insira seu comentário
+    a <- 0
+
+    // Insira seu comentário
+    b <- 1
+
+    // Insira seu comentário
+    PARA i DE 1 ATE n FAÇA
+
+        // Insira seu comentário
+        ESCREVA a
+
+        // Insira seu comentário
+        termo_atual <- a + b
+
+        // Insira seu comentário
+        a <- b
+
+        // Insira seu comentário
+        b <- termo_atual
+
+    FIM_PARA
+FIM
+
 ```
-1 ALGORITMO fibonacci
-2 DECLARE n_termos, n, i, a, b, termo_atual: int
-3 INICIO
-4 ESCREVA "Número de termos da série Fibonacci:"
-5 LEIA n_termos
-6 a = 0
-7 b = 1
-8 PARA <i> DE <1> ATE <n> PASSO <1> FAÇA 
-9   ESCREVA "a"
-10  termo_atual = a + b
-11  a = b
-12  b = termo_atual
-13  FIM_PARA
-14 FIM_ALGORITMO
-```
-### Teste de mesa 6
+#### Tabela de testes
+
 | it | n  | a  | b  | i  | saída | termo_atual = a + b | a = b | b = termo_atual |
 | -- | -- | -- | -- | -- | --    | --                  | --    | --              |
 | 1  | 5  | 0  | 1  | 1  | 0     | 0 + 1 = 1           | 1     | 1               |
@@ -1199,7 +1357,8 @@ I --LOOP--> E
 
 ## Questão 7
 Objetivo: Implemente e teste um algoritmo para inverter a ordem dos dígitos de um número inteiro positivo.
-### Fluxograma 7
+#### Fluxograma
+
 ```mermaid
 flowchart TD
 A([INICIO]) --> B{{Digite um número inteiro: }}
@@ -1211,35 +1370,62 @@ H --FALSE--> Z{{"Número invertido:", numero_inv}}
 Z --> W([FIM])
 H --TRUE--> I[digito = num % 10]
 I --> J[num_inv = num_inv * 10 + digito]
-J --> K[numero = numero // 10]
+J --> K[num = num // 10]
 K --LOOP--> H
 D --FALSE--> E{{O número deve ser positivo!}}
 E --> W
 ```
-### Pseudocódigo 7
+
+#### Pseudocódigo (2 pontos)
+
+```java
+Algoritmo InverteInteiro
+DECLARE num, num_inv, digito: INTEIRO
+
+INICIO
+
+    // Insira seu comentário
+    ESCREVA "Digite o número a ser invertido:"
+    LEIA num
+
+    // Insira seu comentário
+    SE num < 0 ENTAO
+
+        // Insira seu comentário
+        ESCREVA "O número deve ser positivo!"
+
+    // Insira seu comentário
+    SENAO
+
+        // Insira seu comentário
+        num_inv <- 0
+
+        // Insira seu comentário
+        ENQUANTO num > 0 FAÇA
+
+            // Insira seu comentário
+            digito <- num % 10
+
+            // Insira seu comentário
+            num_inv <- (num_inv * 10) + digito
+
+            // Insira seu comentário
+            num <- num // 10
+
+        // Insira seu comentário
+        ESCREVA "Número invertido:", num_inv
+
+    FIM_SE
+
+FIM
 ```
-1 ALGORITMO inverter
-2 DECLARE num, digito, num_inv: int
-3 INICIO
-4 ESCREVA "Digite um número inteiro: "
-5 LEIA num
-6 SE num >= 0 ENTAO
-7   num_inv = 0
-8   ENQUANTO num > 0 FAÇA
-9     digito = num % 10
-10    num_inv = num_inv*10 + digito
-11    num = num//10
-12  FIM_ENQUANTO
-13  ESCREVA "Número invertido:", numero_inv
-14 SENÃO ESCREVA "O número deve ser positivo!"
-15 FIM_SE
-16 FIM_ALGORITMO
-```
-### Teste de mesa 7
-| it | num | num_inv | num > 0 | digito | num = num // 10 | num_inv = (num_inv * 10) + digito | Saída                       |
-| -- | --  | --      | --     | --      | --              | --                                | --                          |
-|    | -1  | 0       | False  |         |                 |                                   | O número deve ser positivo! |
-| 1  | 0   | 0       | False  |         |                 |                                   | Número invertido:: 0        |
-| 1  | 42  | 0       | True   | 2       | 4               | 2                                 |                             |
-| 2  | 4   | 2       | True   | 4       | 0               | 24                                |                             |
-| 3  | 0   | 24      | False  |         |                 |                                   | Número invertido:: 24       |
+
+#### Tabela de testes
+
+| it | num | num_inv | num > 0 | digito | num = num // 10 | num_inv = (num_inv * 10) + digito | Saída                        |
+| -- | --  | --      | --     | --      | --              | --                                | --                           |
+|    | -1  | 0       | False  |         |                 |                                   | O número deve ser positivo!  |
+| 1  | 0   | 0       | False  |         |                 |                                   | Número invertido:: 0         |
+| 1  | 42  | 0       | True   | 2       | 4               | 2                                 |                              |
+| 2  | 4   | 2       | True   | 4       | 0               | 24                                |                              |
+| 3  | 0   | 24      | False  |         |                 |                                   | Número invertido:: 24        |
